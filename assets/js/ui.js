@@ -250,7 +250,7 @@
       ['mouseenter', 'mouseleave'].forEach(event =>
         link.addEventListener(event, () => {
           link.style.transition = 'color 1s ease';
-          link.style.color = event === 'mouseenter' ? '#0000CD' : '#332B24';
+          link.style.color = event === 'mouseenter' ? '#e43c13' : '#e43c13';
         })
       );
     });

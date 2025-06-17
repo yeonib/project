@@ -1,23 +1,34 @@
 
 
 #menuPanel {
-  flex: 0 0 60rem !important;
-  min-width: 60rem !important;
-  width: 60rem !important;
+  flex: 0 0 70rem !important;
+  min-width: 70rem !important;
+  width: 70rem !important;
   height: 100%;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
   nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
     flex-direction: column;
+    width: 7rem;
     height: 90%;
     position: absolute;
     right: 0;
-    border-right: 1px solid #332B24;
-    background-color: #fff;
+    border-right: 1px solid #e43c13;
+    background-color: #ece9e1;
+    .logo {
+      width: 50%;
+      a {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
     .draw-title{
       width: 200px;
       height: auto;
@@ -41,7 +52,7 @@
     &__header {
       position: absolute;
       top: 0;
-      width: 90%;
+      width: 80%;
       height: 70rem;
       transition: opacity 0.3s ease;
       background: #ccc;
@@ -64,8 +75,10 @@
       transition: transform 0.3s ease;
       li {
         a {
-          color: #332B24;
+          // color: #332B24;
+          color: #e43c13;
           font-size: 2rem;
+          font-weight: 600;
           &:hover {
             color: #002867;
           }
@@ -91,9 +104,11 @@
   padding: 4.8rem 0 4.8rem;
   opacity: 0;
   font-size: 2rem;
-  background-color: #fff;
-  border-left: 1px solid #332B24;
+  font-weight: 600;
+  background-color: #ece9e1;
+  border-left: 1px solid #e43c13;
   transition: transform 0.3s ease;
+  color: #e43c13;
 }
 
 

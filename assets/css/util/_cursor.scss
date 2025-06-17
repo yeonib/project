@@ -1,0 +1,46 @@
+
+// 마우스 효과
+#cursor {
+  // position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+      mix-blend-mode: difference;
+
+  .cursor__item {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255, 0, 0, 0.6);
+    transition: all 0.2s ease-in;
+    
+    &__text::after {
+      display: block;
+    }
+  }
+    
+  &[data-cursor-status='zoom'] .cursor__item {
+    transform: translate(-50%,-50%) scale(2);
+  }
+
+  &[data-cursor-status='click'] .cursor__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    &__text {
+      &::after {
+        content: 'Click';
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+}

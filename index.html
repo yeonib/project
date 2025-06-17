@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/default.css">
+  <link rel="stylesheet" href="./assets/css/base/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/ui.js"></script>
+  <script src="./assets/js/ui_mouse_effect.js"></script>
+  <title>yeon</title>
+</head>
+<body>
+  <!--Intro-->
+  <div class="preloader" id="preloader">
+    <div class="terminal-preloader">
+      <div class="border-top">
+        <span>Dimensional Gateway</span>
+        <span>Traversal Initiated</span>
+      </div>
+
+      <div class="terminal-container">
+        <!-- First block of text - before progress bar -->
+        <div class="terminal-line" style="top: 0px;">
+          <span class="faded" data-scramble="true">Dimensional Coordinates: Alpha/Omega/Prime</span>
+          <span class="highlight" data-scramble="true">Coordinates Locked</span>
+        </div>
+
+        <div class="terminal-line" style="top: 30px;">
+          <span class="faded" data-scramble="true">Initiate Quantum Calibration</span>
+          <span class="highlight" data-scramble="true">Singularity Detected</span>
+        </div>
+
+        <div class="terminal-line" style="top: 60px;">
+          <span class="highlight" data-scramble="true">Beginning Tesseract Unfolding</span>
+        </div>
+
+        <div class="terminal-line" style="top: 90px;">
+          <span class="highlight" data-scramble="true">Hyperdimensional Matrices Aligned</span>
+        </div>
+
+        <!-- Progress bar with additional text -->
+        <div class="progress-line">
+          <span class="progress-label">Traversing</span>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <span class="highlight" data-scramble="true">Dimensional Shift</span>
+        </div>
+
+        <!-- Second block of text - after progress bar -->
+        <div class="terminal-line" style="top: 165px;">
+          <span class="highlight" data-scramble="true">Quantum Entanglement Stabilized</span>
+        </div>
+
+        <div class="terminal-line" style="top: 195px;">
+          <span class="highlight" data-scramble="true">Cosmic Strings Vibrating in Harmony</span>
+        </div>
+
+        <div class="terminal-line" style="top: 225px;">
+          <span class="highlight" data-scramble="true">Wormhole Aperture Expanding</span>
+        </div>
+
+        <div class="terminal-line" style="top: 255px;">
+          <span class="highlight" data-scramble="true">Dimensional Gateway Stabilizing</span>
+        </div>
+
+        <div class="terminal-line" style="top: 285px;">
+          <span class="highlight" data-scramble="true">Reality Parameters Reconfigured</span>
+        </div>
+
+        <!-- Background faded lines -->
+        <div class="terminal-line" style="top: 15px;">
+          <span class="faded" data-scramble="true">Quantum Fluctuation Nominal</span>
+        </div>
+
+        <div class="terminal-line" style="top: 45px;">
+          <span class="faded" data-scramble="true">Initiating Spacetime Fold</span>
+        </div>
+
+        <div class="terminal-line" style="top: 75px;">
+          <span class="faded" data-scramble="true">Scanning Parallel Realities</span>
+        </div>
+
+        <div class="terminal-line" style="top: 105px;">
+          <span class="faded" data-scramble="true">Analyzing Dark Matter Density</span>
+        </div>
+
+        <div class="terminal-line" style="top: 180px;">
+          <span class="faded" data-scramble="true">Processing Gravitational Waves</span>
+        </div>
+
+        <div class="terminal-line" style="top: 210px;">
+          <span class="faded" data-scramble="true">Calibrating Temporal Displacement</span>
+        </div>
+
+        <div class="terminal-line" style="top: 240px;">
+          <span class="faded" data-scramble="true">Evaluating Dimensional Resonance</span>
+        </div>
+
+        <div class="terminal-line" style="top: 270px;">
+          <span class="faded" data-scramble="true">Stabilizing Quantum Foam</span>
+        </div>
+      </div>
+
+      <div class="border-bottom">
+        <span>Traversal Sequence Complete</span>
+        <span>Dimensional Gateway Open</span>
+      </div>
+    </div>
+  </div>
+  <!--Contents-->
+  <main class="main-container">
+    <div class="main-container__main" id="main">
+      <div class="main__scroll horizontal-scroll" id="scrollContainer">
+        <!-- 헤더 역할이지만, 콘텐츠 패널로 쓰이므로 section이 적절 -->
+        <section class="scroll__panel panel menu-panel" id="menuPanel">
+          <div class="menu-panel__header top-header">
+            <!-- <img src="./assets/images/yeon.jpg" alt="프로필 이미지"> -->
+          </div>
+          <nav>
+            <ul class="menu-panel__list menu-list">
+              <li><a href="#AboutMe" data-cursor="click">About Me</a></li>
+              <li><a href="#Project" data-cursor="click">Project</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="scroll__panel panel sec1" id="Home">
+          <div class="home_intro">
+            <div class="home_intro--left">
+              <p class="fade-txt">I adapt flexibly to change,
+                focus on precision,
+                and never overlook the details.
+              </p>
+              <!-- <p class="slide-txt">See more on Instagram :
+                <a href="https://www.instagram.com/yeonib.s?igsh=MTB4OTAwMXo2cXlqYw%3D%3D&utm_source=qr" target="_blank" title="새 창 알림">@yeonib.s</a>
+              </p> -->
+            </div>
+            <div class="home_intro--name">
+              <div class="f_name">BYEON</div>
+              <div class="m_name">YEON</div>
+              <div class="l_name">HEE</div>
+            </div>
+          </div>
+        </section>
+        <section class="scroll__panel panel sec2" id="AboutMe">
+           <div class="panel_tit">
+            <span>About Me</span>
+          </div>
+          <div class="content_wrap">
+            <div class="about_cate_area">
+            <ul class="about_cate">
+              <li class="about_cate--list"><a href="#none" data-cursor="click">My Story</a></li>
+              <li class="about_cate--list"><a href="#none" data-cursor="click">Work Style</a></li>
+              <li class="about_cate--list"><a href="#none" data-cursor="click">Project Exp</a></li>
+            </ul>
+          </div>
+          <div class="about_content_area show">
+            <div class="about_content about_content--01 show">
+              <h2 class="about_content--tit">My Story</h2>
+              <p class="about_content--desc">안녕하세요, 꾸준한 배움과 성장을 통해 더 나은 결과물을 만들어가는 웹 퍼블리셔 변연희 입니다.
+                저의 주요 스킬은 <span>HTML5, SCSS, CSS3, Adobe XD, Figma, GitLab, Adobe Photoshop, jQuery, ES6, 
+                JavaScript, SVG, Eclipse, VSCode</span>입니다. 이러한 다양한 기술을 활용하여 웹퍼블리싱 업무를 수행해왔습니다.
+
+                저는 최신 웹퍼블리싱 트렌드를 지속적으로 학습하고 적용함으로써 업계에서 주도적인 역할을 수행하고자 
+                합니다. 신기술에 대한 호기심을 가지고 지식을 쌓아나가며, 끊임없는 자기계발을 통해 더 나은 결과물을 
+                만들어내는 것을 목표로 하고 있습니다.
+
+                함께 성장하고 발전하는 팀에 속해 함께 일하는 즐거움을 느끼며, 전문성을 향상시켜가고 있습니다. 배움에 
+                거리낌이 없고, 주어진 문제를 주도적으로 해결해나가는 데에서 성취감을 느낍니다.
+
+                새로운 영역에 도전하는 데 주저하지 않고, 변화에 빠르게 적응하며, 맡은 일에는 책임감과 끈기를 가지고 
+                임합니다. 이러한 저의 태도는 퍼블리셔로서의 첫걸음에서 단단한 기반이 되어줄 것이며, 지속 가능한 성장
+                으로 이어질 것이라 확신합니다.
+              </p>
+            </div>
+            <div class="about_content about_content--02">
+              <h2 class="about_content--tit">Work Style</h2>
+              <p class="about_content--desc">주어진 업무를 단순히 수행하는 데 그치지 않고, 꾸준한 학습과 성장을 통해 항상 더 나은 결과물을 만
+                들어내는 것을 추구합니다. 새로운 기술이나 트렌드가 등장하면 적극적으로 탐구하고, 이를 실무에 적용
+                하여 프로젝트의 완성도를 한층 끌어올립니다.
+
+                세부적인 부분까지 최선을 다하여 신경쓰며, 사용자 경험을 고려한 웹퍼블리싱을 지향합니다. 퍼블리싱 과정에서 
+                발생할 수 있는 다양한 문제 상황에도 주도적으로 접근하여 해결책을 모색하고, 필요한 경우 적극적으로 
+                새로운 방식을 도입해 개선점을 찾아냅니다.
+
+                팀원들과의 협업에서는 함께 성장하고 배우는 과정을 소중하게 생각합니다. 서로의 의견을 경청하며 조율
+                하고, 문제 해결을 위한 건설적인 대화를 통해 최상의 결과를 만들어냅니다. 빠르게 변화하는 웹 환경 속에
+                서도 유연하게 적응하며, 항상 책임감과 끈기를 가지고 맡은 일을 끝까지 완수하는 태도를 유지합니다.
+
+                저에게 있어 퍼블리싱은 단순한 작업이 아닌 지속적으로 발전하는 과정입니다. 끊임없는 자기계발과 새로운 
+                도전에 대한 열린 자세를 바탕으로, 보다 높은 완성도의 작업물을 만들어가는 것을 목표로 하고 있습니다.
+              </p>
+            </div>
+            <div class="about_content about_content--03">
+              <h2 class="about_content--tit">Project Exp</h2>
+              <p class="about_content--desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non rem dolores 
+                hic dolore perferendis vel tenetur maiores, similique dolor accusamus consequuntur 
+                ullam voluptas perspiciatis dignissimos tempora rerum corrupti totam fuga!
+              </p>
+            </div>
+          </div>
+          </div>
+        </section>
+        <section class="scroll__panel panel sec3" id="Project">
+          <div class="panel_tit">
+            <span>Project</span>
+          </div>
+          <div class="content_wrap">
+            <div class="project_cate_area">
+              <ul class="project_cate">
+                <li class="project_cate--list project-link"><a href="./html/project/welstory.html" data-cursor="click">SAMSUNG WELSTORY</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/starfieldmarket.html" data-cursor="click">STARFIELD MARKET</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/mzip.html" data-cursor="click">M.ZIP</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/emart.html" data-cursor="click">E-MART</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/shihyo.html" data-cursor="click">SHIHYO</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/shihyo.html" data-cursor="click">IFC MALL</a></li>
+                <!-- <li class="project_cate--list project-link"><a href="./html/project/shihyo.html" data-cursor="click">KT.COM</a></li> -->
+                <li class="project_cate--list project-link"><a href="./html/project/lancome.html" data-cursor="click">LANCOME</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/sambamall.html" data-cursor="click">SAMCHULLY</a></li>
+                <li class="project_cate--list project-link"><a href="./html/project/etc.html" data-cursor="click">ETC.</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="scroll__panel panel sec4">
+          <div class="panel_tit">
+            <span>Final Notes</span>
+          </div>
+          <div class="content_wrap">
+            <div class="marquee">
+              <div class="marquee-inner">
+                <span>From layout to launch,</span>
+                <span>I code what users feel —</span>
+                <span>not just markup,</span>
+                <span>but meaningful markup.</span>
+              </div>
+            </div>
+            <div class="final_area">
+              <img src="./assets/images/bg1.jpg" alt="포트폴리오 종료 이미지">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+   <!--contact page-->
+  <section class="panel sec5" id="Contact">
+    <div class="contact__inner">
+      <div class="contact--transition-slide"></div>
+      <div class="menu--items">
+        <div class="menu--item">
+          <div class="menu--item-link">
+            <a href="#projects" class="menu--link">
+              <span class="menu--link-txt" data-text="projects">YEON HEE</span>
+            </a>
+          </div>
+          <div class="menu--item-line"></div>
+        </div>
+      </div>
+      <div class="menu--items">
+        <div class="menu--item">
+          <div class="menu--item-link">
+            <a href="#projects" class="menu--link">
+              <span class="menu--link-txt" data-text="projects">oilosos@naver.com</span>
+            </a>
+          </div>
+          <div class="menu--item-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--contact btn-->
+  <div class="contact_btn_wrap">
+    <button class="contact_btn">
+      <div class="content contact_btn--txt">
+        <span class="txt">Contact</span>
+        <span class="txt">Hide</span>
+      </div>
+    </button>
+  </div>
+  <!-- 페이지 전환 애니메이션용 오버레이 -->
+  <div class="page-transition"></div>
+</body>
+<script>
+  console.clear();
+  const { gsap } = window;
+  const btn = document.querySelector(".contact_btn");
+  const sec4 = document.querySelector(".sec5");
+
+  btn.addEventListener("click", () => {
+    btn.style.pointerEvents = "none"; // 중복 방지
+
+    if (btn.classList.contains("active")) {
+      btn.classList.remove("active");
+      hideMenu();
+    } else {
+      btn.classList.add("active");
+      showMenu();
+    }
+
+    setTimeout(() => {
+      btn.style.pointerEvents = "auto";
+    }, 1200);
+  });
+
+  function showMenu() {
+    sec4.classList.add("is-active");
+
+    const tl = gsap.timeline();
+
+    gsap.set(".contact_btn", { pointerEvents: "none" });
+
+    tl.fromTo(
+      ".sec5 .contact--transition-slide",
+      { scaleX: 0, transformOrigin: "left center" },
+      { duration: 0.5, scaleX: 1, ease: "Expo.inOut" }
+    )
+      .fromTo(
+        ".sec5 .menu--item-line",
+        { scaleX: 0, transformOrigin: "left center" },
+        { duration: 0.65, scaleX: 1, ease: "Expo.inOut", stagger: 0.15 }
+      )
+      .fromTo(
+        ".sec5 .menu--link",
+        { translateY: "100%" },
+        { duration: 2.25, translateY: 0, ease: "elastic.inOut", stagger: 0.15 },
+        "-=1.65"
+      )
+      .set(".contact_btn", { pointerEvents: "all" });
+  }
+
+  function hideMenu() {
+    const tl = gsap.timeline();
+
+    gsap.set(".contact_btn", { pointerEvents: "none" });
+
+    tl.to(".sec5 .menu--item-line", {
+      duration: 0.6,
+      scaleX: 0,
+      transformOrigin: "right center",
+      ease: "Expo.inOut",
+      stagger: -0.15
+    })
+      .to(
+        ".sec5 .menu--link",
+        {
+          duration: 0.35,
+          translateY: "100%",
+          ease: "Expo.inOut",
+          stagger: -0.15
+        },
+        0
+      )
+      .to(".sec5 .contact--transition-slide", {
+        duration: 0.5,
+        transformOrigin: "right center",
+        scaleX: 0,
+        ease: "Expo.inOut"
+      })
+      .set(".contact_btn", { pointerEvents: "all" })
+      .add(() => {
+        sec4.classList.remove("is-active");
+      });
+  }
+</script>
+</html>

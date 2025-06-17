@@ -1,0 +1,99 @@
+
+
+#menuPanel {
+  flex: 0 0 60rem !important;
+  min-width: 60rem !important;
+  width: 60rem !important;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 90%;
+    position: absolute;
+    right: 0;
+    border-right: 1px solid #332B24;
+    background-color: #fff;
+    .draw-title{
+      width: 200px;
+      height: auto;
+      aspect-ratio: 2 / 1; 
+      display: block;
+      text {
+        stroke: #333;
+        stroke-width: 5;
+        fill: none;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        font-size: 15rem;
+        &.animate {
+          animation: drawText 2.5s ease-out forwards;
+          stroke: #333;
+        }
+      }
+    }
+  }
+  .menu-panel {
+    &__header {
+      position: absolute;
+      top: 0;
+      width: 90%;
+      height: 70rem;
+      transition: opacity 0.3s ease;
+      background: #ccc;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__list {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      font-size: 2.5rem;
+      font-family: inherit;
+      color: inherit;
+      line-height: inherit;
+      transition: transform 0.3s ease;
+      li {
+        a {
+          color: #332B24;
+          font-size: 2rem;
+          &:hover {
+            color: #002867;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 복제된 메뉴는 body에 위치하므로 별도로 추가
+.menu-panel__list--clone {
+  position: fixed;
+  top: 0;
+  width: 8rem;
+  height: 100%;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 4rem;
+  padding: 4.8rem 0 4.8rem;
+  opacity: 0;
+  font-size: 2rem;
+  background-color: #fff;
+  border-left: 1px solid #332B24;
+  transition: transform 0.3s ease;
+}
+
+

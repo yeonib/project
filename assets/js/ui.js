@@ -4,7 +4,6 @@
 (() => {
   const slideEase = "cubic-bezier(0.65,0.05,0.36,1)";
   const specialChars = "▪";
-
   // marquee
   const initMarqueeScroll = () => {
     const marqueeInner = document.querySelector('.marquee-inner');
@@ -186,7 +185,27 @@
 
     animateTerminalPreloader();
   };
+  // name scroll 이동
+  const initMiddleNameFollowScroll = () => {
+    const mName = document.querySelector(".home_intro--name .m_name");
+    if (!mName) return;
 
+    const scrollContainer = document.querySelector(".main__scroll");
+    const totalScrollWidth = scrollContainer.scrollWidth - window.innerWidth;
+
+    gsap.to(mName, {
+      x: () => totalScrollWidth * 0.15, // 전체 스크롤의 20%만큼 오른쪽으로 이동 (조절 가능)
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".main__scroll",
+        start: "top top",
+        end: () => "+=" + totalScrollWidth,
+        scrub: true,
+        pin: false
+      }
+    });
+  };
+  
   const initScrollHorizontal = () => {
     gsap.registerPlugin(ScrollTrigger);
     const scrollContainer = document.querySelector(".main__scroll");
@@ -204,14 +223,12 @@
       }
     });
   };
-
   const initLogoAnimation = () => {
     const logoSvg = document.querySelector(".draw-title text");
     if (logoSvg) {
       logoSvg.classList.add("animate");
     }
   };
-
   const initMenuCloneEffect = () => {
     const menuPanel = document.getElementById("menuPanel");
     const originalMenu = menuPanel.querySelector(".menu-panel__list");
@@ -237,14 +254,12 @@
       }
     });
   };
-
   const initAboutTextAnimation = () => {
     const fadeTxt = document.querySelector('.fade-txt');
     const slideTxt = document.querySelector('.slide-txt');
     if (fadeTxt) setTimeout(() => fadeTxt.classList.add('show'), 300);
     if (slideTxt) setTimeout(() => slideTxt.classList.add('show'), 600);
   };
-
   const initMenuActiveEffect = () => {
     document.querySelectorAll('#menuPanel .menu-panel__list a').forEach(link => {
       ['mouseenter', 'mouseleave'].forEach(event =>
@@ -255,25 +270,41 @@
       );
     });
   };
+  const initAccordionStyleAboutMe = () => {
+    const items = document.querySelectorAll('.about_accordion .about_cate--list');
 
-  const initaboutHoverEffect = () => {
-    const wrapper = document.querySelector('.content_wrap');
-    const cateItems = wrapper.querySelectorAll('.about_cate--list');
-    const contentArea = wrapper.querySelector('.about_content_area');
-    const contentItems = contentArea ? contentArea.querySelectorAll('.about_content_area > div') : [];
-    if (!cateItems.length || !contentArea || !contentItems.length) return;
-    let currentIndex = null;
-    cateItems.forEach((item, index) => {
-      item.addEventListener('mouseenter', () => {
-        currentIndex = index;
-        contentArea.classList.add('show');
-        contentItems.forEach(content => content.classList.remove('show'));
-        const target = contentArea.querySelector(`.about_content--0${index + 1}`);
-        if (target) target.classList.add('show');
+    items.forEach(item => {
+      const link = item.querySelector('a');
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // 모든 항목 초기화
+        items.forEach(el => el.classList.remove('active'));
+
+        // 현재 항목만 활성화
+        item.classList.add('active');
       });
     });
   };
 
+  // const initaboutHoverEffect = () => {
+  //   const wrapper = document.querySelector('.content_wrap');
+  //   const cateItems = wrapper.querySelectorAll('.about_cate--list');
+  //   const contentArea = wrapper.querySelector('.about_content_area');
+  //   const contentItems = contentArea ? contentArea.querySelectorAll('.about_content_area > div') : [];
+  //   if (!cateItems.length || !contentArea || !contentItems.length) return;
+  //   let currentIndex = null;
+  //   cateItems.forEach((item, index) => {
+  //     item.addEventListener('mouseenter', () => {
+  //       currentIndex = index;
+  //       contentArea.classList.add('show');
+  //       contentItems.forEach(content => content.classList.remove('show'));
+  //       const target = contentArea.querySelector(`.about_content--0${index + 1}`);
+  //       if (target) target.classList.add('show');
+  //     });
+  //   });
+  // };
   const initProjectPageTransition = () => {
     const overlay = document.querySelector('.page-transition');
     if (!overlay) return;
@@ -292,6 +323,7 @@
       });
     });
   };
+  
 
   const init = () => {
     initTerminalPreloader();
@@ -300,9 +332,11 @@
     initMenuCloneEffect();
     initAboutTextAnimation();
     initMenuActiveEffect();
-    initaboutHoverEffect();
+    // initaboutHoverEffect();
+    initAccordionStyleAboutMe();
     initProjectPageTransition();
     initMarqueeScroll();
+    initMiddleNameFollowScroll();
   };
 
   window.addEventListener("load", init);

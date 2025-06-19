@@ -3,10 +3,10 @@
 
 // Intro
 :root {
-  --color-text: #fff;
-  --color-bg: #fff;
-  --color-overlay: #000;
-  --color-overlay-text: #fff;
+  --color-text: #e43c13;
+  --color-bg: #e43c13;
+  --color-overlay: #ece9e1;
+  --color-overlay-text: #e43c13;
   --grid-padding: 2rem;
   --grid-gap: 1rem;
   --transition-timing: cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -28,7 +28,7 @@
   align-items: center;
   //공통
   .highlight {
-    color: #fff;
+    color: #e43c13;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -36,8 +36,8 @@
     margin-left: 1rem;
   }
   .faded {
-    opacity: 0.5!important;
-    color: #ccc;
+    // opacity: 0.5!important;
+    color: #e43c13;
     font-size: 1.5rem;
     text-transform: uppercase!important;
     letter-spacing: 0.08em!important;
@@ -92,7 +92,7 @@
           font-weight: 400;
           margin-right: 10px;
           font-size: 1.5rem;
-          color: #fff;
+          color: #e43c13;
           font-family: var(--font-primary);
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -101,14 +101,14 @@
         .progress-container {
           width: 200px;
           height: 1px;
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: #eabcac;
           position: relative;
           overflow: hidden;
 
           .progress-bar {
             height: 100%;
             width: 0%;
-            background-color: #ece9e1;
+            background-color: #e43c13;
             transition: none;
           }
         }
@@ -125,7 +125,7 @@
       justify-content: space-between;
       padding: 0 10px;
       font-size: 1.2rem;
-      color: #fff;
+      color: #e43c13;
       align-items: center;
       font-family: var(--font-secondary);
       text-transform: uppercase;
@@ -406,7 +406,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: #e43c13;
   z-index: 1000;
   overflow: hidden;
   pointer-events: none;
@@ -418,11 +418,12 @@
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+    color: #fff;
   }
 
   // 내부 컨테이너
   .contact__inner {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -438,7 +439,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: #e43c13;
     transform-origin: left center;
     transform: scaleX(0);
     z-index: 0;
@@ -459,11 +460,12 @@
       align-items: center;
       justify-content: space-between;
       pointer-events: none;
+      color: #fff;
     }
 
     &-line {
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: #ece9e1;
       transform: scaleX(0);
       transform-origin: left center;
@@ -475,17 +477,15 @@
   .menu--link {
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    // color: #fff;
-    color: #e43c13;
+    color: #fff;
     text-decoration: none;
     transform: translateY(100%);
 
     &-txt {
       position: relative;
       display: inline-block;
-      font-size: 3rem;
-
+      font-size: 8rem;
+      font-weight: 700;
       &::after {
         content: attr(data-text);
         position: absolute;
@@ -526,7 +526,6 @@
           --translate-y: 0;
           // color: #000;
           color: #e43c13;
-          // color: rgb(19, 19, 19);
         }
         &:nth-child(2) {
           --translate-y: 150%;
@@ -568,14 +567,4 @@
 
 .page-transition.active {
   transform: translateY(0); 
-}
-
-
-@keyframes scroll-vertical {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
 }

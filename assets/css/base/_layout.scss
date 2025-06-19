@@ -1,71 +1,4 @@
 
-
-//메인 키프레임 
-// 구체 회전 애니메이션
-// @keyframes spinSphere {
-//   from {
-//     transform: rotateZ(60deg) rotateX(0deg);
-//   }
-//   to {
-//     transform: rotateZ(60deg) rotateX(360deg);
-//   }
-// @keyframes spinSphere {
-//   from {
-//     transform: rotateX(15deg) rotateY(0deg) rotateZ(0deg);
-//   }
-//   to {
-//     transform: rotateX(15deg) rotateY(360deg) rotateZ(360deg);
-//   }
-// }
-
-// /* 애니메이션 정의 */
-// @keyframes slideUpEffect {
-//   0% {
-//     transform: translateY(100%); 
-//     opacity: 0;
-//   }
-//   50% {
-//     opacity: 1;
-//   }
-//   100% {
-//     transform: translateY(0); 
-//     opacity: 1; 
-//   }
-// }
-
-// /* 화살표 애니메이션 */
-// @keyframes bounce {
-//   0%, 100% {
-//     transform: translateY(0) rotate(-45deg);
-//   }
-//   50% {
-//     transform: translateY(10px) rotate(-45deg); 
-//   }
-// }
-
-// /* 페이드 인 애니메이션 */
-// @keyframes fadeIn {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
-// // 텍스트 svg 
-// @keyframes draw {
-//   to {
-//     stroke-dashoffset: 2; /* 경로를 따라 그리기 */
-//   }
-// }
-
-// @keyframes fill {
-//   to {
-//     fill: #333; /* 내부를 채우기 */
-//   }
-// }
-
 // 메인 이름 키프레임
 
 @keyframes drawText {
@@ -74,6 +7,14 @@
   }
 }
 
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
 
 /* 키프레임은 그대로 사용 */
 @keyframes fadeIn {

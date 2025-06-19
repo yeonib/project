@@ -41,7 +41,7 @@
     const animateTerminalPreloader = () => {
       updateProgress(0);
       const tl = gsap.timeline({ onComplete: revealContent });
-      const totalDuration = 6;
+      const totalDuration = 3;
       const allLines = Array.from(document.querySelectorAll(".terminal-line"));
       allLines.sort((a, b) => parseInt(a.style.top) - parseInt(b.style.top));
 
@@ -57,7 +57,7 @@
         scrambleSpans.forEach((span) => {
           const originalText = span.getAttribute("data-original-text") || span.textContent;
           textRevealTl.to(span, {
-            duration: 0.8,
+            duration: 0.5,
             scrambleText: {
               text: originalText,
               chars: specialChars,

@@ -691,6 +691,26 @@ caption, legend {
     stroke-dashoffset: 0;
   }
 }
+@-webkit-keyframes scroll-vertical {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@keyframes scroll-vertical {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
 /* 키프레임은 그대로 사용 */
 @-webkit-keyframes fadeIn {
   to {
@@ -786,10 +806,10 @@ h2 {
 }
 
 :root {
-  --color-text: #fff;
-  --color-bg: #fff;
-  --color-overlay: #000;
-  --color-overlay-text: #fff;
+  --color-text: #e43c13;
+  --color-bg: #e43c13;
+  --color-overlay: #ece9e1;
+  --color-overlay-text: #e43c13;
   --grid-padding: 2rem;
   --grid-gap: 1rem;
   --transition-timing: cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -817,7 +837,7 @@ h2 {
           align-items: center;
 }
 #preloader .highlight {
-  color: #fff;
+  color: #e43c13;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -825,8 +845,7 @@ h2 {
   margin-left: 1rem;
 }
 #preloader .faded {
-  opacity: 0.5 !important;
-  color: #ccc;
+  color: #e43c13;
   font-size: 1.5rem;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
@@ -883,7 +902,7 @@ h2 {
   font-weight: 400;
   margin-right: 10px;
   font-size: 1.5rem;
-  color: #fff;
+  color: #e43c13;
   font-family: var(--font-primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -891,14 +910,14 @@ h2 {
 #preloader .terminal-preloader .terminal-container .progress-line .progress-container {
   width: 200px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #eabcac;
   position: relative;
   overflow: hidden;
 }
 #preloader .terminal-preloader .terminal-container .progress-line .progress-container .progress-bar {
   height: 100%;
   width: 0%;
-  background-color: #ece9e1;
+  background-color: #e43c13;
   -webkit-transition: none;
   transition: none;
 }
@@ -916,7 +935,7 @@ h2 {
           justify-content: space-between;
   padding: 0 10px;
   font-size: 1.2rem;
-  color: #fff;
+  color: #e43c13;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1248,7 +1267,7 @@ h2 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: #e43c13;
   z-index: 1000;
   overflow: hidden;
   pointer-events: none;
@@ -1261,9 +1280,10 @@ h2 {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+  color: #fff;
 }
 .sec5 .contact__inner {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1286,7 +1306,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #e43c13;
   -webkit-transform-origin: left center;
           transform-origin: left center;
   -webkit-transform: scaleX(0);
@@ -1311,10 +1331,11 @@ h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   pointer-events: none;
+  color: #fff;
 }
 .sec5 .menu--item-line {
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: #ece9e1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
@@ -1329,8 +1350,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
-  color: #e43c13;
+  color: #fff;
   text-decoration: none;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
@@ -1338,7 +1358,8 @@ h2 {
 .sec5 .menu--link-txt {
   position: relative;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 8rem;
+  font-weight: 700;
 }
 .sec5 .menu--link-txt::after {
   content: attr(data-text);
@@ -1420,27 +1441,6 @@ h2 {
           transform: translateY(0);
 }
 
-@-webkit-keyframes scroll-vertical {
-  0% {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-  }
-  100% {
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-}
-
-@keyframes scroll-vertical {
-  0% {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-  }
-  100% {
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-}
 #subContainer {
   position: relative;
   height: 100%;
@@ -1464,6 +1464,7 @@ h2 {
 #subContainer .project_con {
   width: 100%;
   height: 100%;
+  background-color: #ece9e1;
 }
 #subContainer .project_con--left {
   width: 100%;

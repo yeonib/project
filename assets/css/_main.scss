@@ -189,6 +189,7 @@
               opacity: 0;
               transform: translateX(0);
               transition: all 1s ease;
+              font-size: 2.5rem;
               color: #e43c13;
             }
 
@@ -232,15 +233,14 @@
       .sec2 {
         justify-content: flex-start;
         &.scroll__panel {
-          min-width: 70vw;
+          min-width: 65vw;
         }
         .about_accordion {
           display: flex;
           width: 70rem;
           height: 90%;
-
           .about_cate--list {
-            flex: 0 0 10rem;
+            flex: 0 0 8.4rem;
             min-width: 5rem;
             display: flex;
             flex-direction: row;
@@ -253,6 +253,7 @@
             border-right: 1px solid #e43c13;
             box-sizing: border-box;
             cursor: pointer;
+            padding-right: 5rem;
 
             a {
               writing-mode: vertical-rl;
@@ -262,6 +263,28 @@
               color: #e43c13;
               font-weight: bold;
               margin-right: 5rem;
+              z-index: 2;
+               &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0; 
+                width: 100%;
+                height: 100%;
+                background-color: #e43c13;
+                transform: scaleX(0); 
+                transform-origin: right center; 
+                transition: transform 0.4s ease;
+              }
+
+              &:hover::before {
+                transform: scaleX(1); 
+              }
+
+              &:hover a{
+                color: #fff;
+                z-index: 10;
+              }
             }
 
             .about_content {
@@ -273,95 +296,24 @@
                 font-size: 2rem; 
                 line-height: 1.7;
                 color: #e43c13;
+                white-space: unset;
               }
             }
-
             &.active {
-              flex: 0 0 70rem;
+              flex: 0 0 75rem;
+              // padding-right: 3rem;
               .about_content {
                 opacity: 1;
                 pointer-events: auto;
               }
             }
           }
+          .about_content {
+            &--03 {
+              border-right: 0;
+            }
+          }
         }
-
-        // .about_cate_area {
-        //   display: flex;
-        //   justify-content: space-between;
-        //   align-items: center;
-        //   width: 75rem;
-        //   height: 100%;
-        //   padding: 0 5rem;
-        //     &::after {
-        //       content: '';
-        //       display: block;
-        //       width: .1rem;
-        //       height: 100%;
-        //       background: #e43c13;
-        //     }
-        //   .about_cate {
-        //     display: flex;
-        //     flex-direction: column;
-        //     justify-content: flex-start;
-        //     align-items: flex-start;
-        //     height: 100%;
-        //     cursor: pointer;
-        //     &--list {
-        //       font-size: 3.5rem;
-        //       color: #e43c13;
-        //       &:hover {
-        //         // color: #002867;
-        //         color: #e43c13;
-        //       }
-        //     }
-        //   }
-        // }
-        // .about_content_area {
-        //   position: relative;
-        //   opacity: 0;
-        //   visibility: hidden;
-        //   transition: opacity 0.5s ease;
-        //   width: 100%;
-        //   height: 100%;
-        //   &.show {
-        //     opacity: 1;
-        //     visibility: visible;
-        //   }
-        //   > div {
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     opacity: 0;
-        //     visibility: hidden;
-        //     transition: opacity 0.5s ease;
-
-        //     &.show {
-        //       opacity: 1;
-        //       visibility: visible;
-        //     }
-        //   }
-        //   .about_content {
-        //     letter-spacing: -0.05rem;
-        //     &--tit {
-        //       margin-bottom: 2rem;
-        //       font-size: 2.8rem;
-        //       color: #e43c13;
-        //     }
-        //     &--desc {
-        //       font-weight: 400;
-        //       font-size: 1.8rem;
-        //       line-height: 180%;
-        //       color: #e43c13;
-        //     }
-        //     span {
-        //       font-weight: 600;
-        //       // color: #002867;
-        //       color: #e43c13;
-        //     }
-        //   }
-        // }
       }
       .sec3 {
         &.scroll__panel {

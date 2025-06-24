@@ -11,7 +11,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../../assets/js/ui_mouse_effect.js"></script>
   <script src="../../assets/js/ui.js"></script>
   <title>M.ZIP</title>
 </head>
@@ -23,7 +25,6 @@
         <ul class="menu-panel__list menu-list">
           <li><a href="../../index.html">About Me</a></li>
           <li><a href="../../index.html">Project</a></li>
-          <li><a href="../../index.html">Contact</a></li>
         </ul>
       </nav>
     </section>
@@ -34,10 +35,48 @@
         </div>
       </div>
       <div class="project_con--right">
-        <h2 data-aos="flip-up" data-aos-duration="1500">M.ZIP</h2>
-        <p data-aos="fade-left" data-aos-duration="1800">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis 
-        amet saepe dolores optio velit excepturi ipsum repellat voluptas, eaque qui labore a. 
-        Omnis quos animi veritatis asperiores, vitae provident accusantium.</p>
+        <h2 class="project_tit" data-aos="flip-up" data-aos-duration="1500" data-cursor="click">
+          <a class='animated_arrow' href='https://google.com'>
+            <span class='the_arrow -left'>
+              <span class='shaft'></span>
+            </span>
+            <span class='main'>
+              <span class='text'>
+                M.ZIP
+              </span>
+              <span class='the_arrow -right'>
+                <span class='shaft'></span>
+              </span>
+            </span>
+          </a>
+        </h2>
+        <p data-aos="fade-left" data-aos-duration="1800">한국투자증권 모바일트레이딩서비스(MTS) 한국투자 앱의 투자정보 플랫폼 'M.ZIP'의 신규 론칭을 
+          수행하였습니다. M.ZIP은 '재테크 압충 콘텐츠(Money.ZIP)','MZ세대를 위한 투자안내서(MZ Investment Prospectus)'의 의미를 담고 있습니다.
+          서비스명을 통해 MZ세대를 아우르는 디지털 자산관리 서비스임을 직관적으로 표현하고 있습니다.
+        </p>
+        <div class="skill_container">
+          <div class="bar">
+            <div class="skill">HTML</div>
+            <div class="bar_outer" data-percent="100">
+              <div class="speech_bubble html">100%</div>
+              <div class="bar_inner ht"></div>
+            </div>
+          </div>
+          <div class="bar">
+            <div class="skill">CSS/SCSS</div>
+            <div class="bar_outer" data-percent="100">
+              <div class="speech_bubble css">100%</div>
+              <div class="bar_inner cs"></div>
+            </div>
+          </div>
+          <div class="bar">
+            <div class="skill">JS/jQuery</div>
+            <div class="bar_outer" data-percent="100">
+              <div class="speech_bubble jqu">100%</div>
+              <div class="bar_inner jq"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

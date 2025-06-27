@@ -182,7 +182,7 @@
     const totalScrollWidth = scrollContainer.scrollWidth - window.innerWidth;
 
     gsap.to(mName, {
-      x: () => totalScrollWidth * 0.18, // 전체 스크롤의 20%만큼 오른쪽으로 이동 (조절 가능)
+      x: () => totalScrollWidth * 0.18, 
       ease: "none",
       scrollTrigger: {
         trigger: ".main__scroll",
@@ -288,7 +288,19 @@
       });
     });
   };
+  // back history 
+  const initBackButton = () => {
+    const backButton = document.querySelector('.back-button');
+    if (!backButton) return;
 
+    backButton.addEventListener('click', () => {
+      if (window.history.length > 1) {
+        history.back();
+      } else {
+        window.location.href = '/'; 
+      }
+    });
+  };
 
   const init = () => {
     initTerminalPreloader();
@@ -299,6 +311,7 @@
     initAccordionStyleAboutMe();
     initProjectPageTransition();
     initMiddleNameFollowScroll();
+    initBackButton();
   };
 
   window.addEventListener("load", init);

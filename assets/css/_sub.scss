@@ -11,16 +11,16 @@
     button {
       font-size: 1.6rem;
       font-weight: 500;
-      color: #e43c13;
+      color: #333;
       display: flex;
       align-items: center;
       gap: 1rem;
       &::before {
         content: '';
         display: block;
-        width: 2rem;
-        height: 2rem;
-        border: 1px solid red;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('../../assets/images/ico_back.png') no-repeat center / contain;
       }
     }
   }
@@ -31,7 +31,7 @@
     background-color: #ece9e1;
     &--left {
       width: 100%;
-      padding: 8rem 8rem 8rem 16rem;
+      padding: 8rem;
       border-right: 1px solid #e43c13;
       .project_img {
         width: 100%;

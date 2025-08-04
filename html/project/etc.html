@@ -14,29 +14,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../../assets/js/ui_mouse_effect.js"></script>
+  <script src="../../assets/js/common.js"></script>
   <script src="../../assets/js/ui.js"></script>
   <title>ETC</title>
 </head>
 <body>
   <div class="sub-container etc" id="subContainer">
-    <!-- 헤더 역할이지만, 콘텐츠 패널로 쓰임 -->
-    <section class="scroll__panel panel menu-panel" id="menuPanel">
-      <nav>
-        <ul class="menu-panel__list menu-list">
-          <li><a href="../../index.html">About Me</a></li>
-          <li><a href="../../index.html">Project</a></li>
-        </ul>
-      </nav>
-    </section>
+    <div class="back_wrapper">
+      <button onclick="history.back()">back</button>
+    </div>
     <section class="project_con con1">
       <div class="project_con--left">
         <div class="project_img" data-aos="fade-up" data-aos-duration="2000">
-          <img src="../../assets/images/bg5.jpg" alt="테스트 이미지">
+          <img src="../../assets/images/bg-etc.png" alt="신라면세점·웰스토리 제안 이미지">
         </div>
       </div>
       <div class="project_con--right">
         <h2 class="project_tit" data-aos="flip-up" data-aos-duration="1500" data-cursor="click">
-          <a class="animated_arrow" href="https://google.com" target="_blank">
+          <a class="animated_arrow" href="#" target="_blank">
             <span class="the_arrow -left">
               <span class="shaft"></span>
             </span>
@@ -50,28 +45,28 @@
             </span>
           </a>
         </h2>
-        <p data-aos="fade-left" data-aos-duration="1800">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis 
-        amet saepe dolores optio velit excepturi ipsum repellat voluptas, eaque qui labore a. 
-        Omnis quos animi veritatis asperiores, vitae provident accusantium.</p>
+        <p data-aos="fade-left" data-aos-duration="1800">퍼블리싱 항목이 포함되지 않았던 제안 프로젝트였으나, 
+          클라이언트의 긴급 요청으로 제안 시안 내 인터페이스 구현 예시를 추가로 구성하였습니다. 
+          짧은 납기와 휴무 일정 내 작업을 수행하였으며, 기획 및 디자인팀과의 협업을 통해 실현 가능성과 전달력을 동시에 고려한 결과물을 제작하였습니다. 이를 통해 제안 시 비주얼 신뢰도와 완성도 향상에 기여하였습니다.</p>
         <div class="skill_container">
           <div class="bar">
             <div class="skill">HTML</div>
-            <div class="bar_outer" data-percent="100">
-              <div class="speech_bubble html">100%</div>
+            <div class="bar_outer" data-percent="33">
+              <div class="speech_bubble html">33%</div>
               <div class="bar_inner ht"></div>
             </div>
           </div>
           <div class="bar">
             <div class="skill">CSS/SCSS</div>
-            <div class="bar_outer" data-percent="100">
-              <div class="speech_bubble css">100%</div>
+            <div class="bar_outer" data-percent="33">
+              <div class="speech_bubble css">33%</div>
               <div class="bar_inner cs"></div>
             </div>
           </div>
           <div class="bar">
             <div class="skill">JS/jQuery</div>
-            <div class="bar_outer" data-percent="80">
-              <div class="speech_bubble jqu">80%</div>
+            <div class="bar_outer" data-percent="20">
+              <div class="speech_bubble jqu">20%</div>
               <div class="bar_inner jq"></div>
             </div>
           </div>

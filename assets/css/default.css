@@ -1133,8 +1133,8 @@ h2 {
   background-color: #decfcc;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transform-origin: right center;
-          transform-origin: right center;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
   -webkit-transition: -webkit-transform 0.4s ease;
   transition: -webkit-transform 0.4s ease;
   transition: transform 0.4s ease;
@@ -1240,11 +1240,11 @@ h2 {
   height: 90%;
   gap: 20rem;
 }
-#main.main-container__main .main__scroll .sec3 .final_area img {
-  width: 50rem;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+#main.main-container__main .main__scroll .sec3 .final_area video {
+  width: 60rem;
+  height: 90rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #main.main-container__main .main__scroll .sec3 .final_area .final_message--txt {
   font-size: 3rem;

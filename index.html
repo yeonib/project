@@ -200,8 +200,8 @@
                 도전에 대한 열린 자세를 바탕으로, 보다 높은 완성도의 작업물을 만들어가는 것을 목표로 하고 있습니다.</p>
               </div>
             </div> 
-            <div class="about_cate--list about_content--03">
-              <a href="#none" data-cursor="click">Project Exp</a>
+            <div class="about_cate--list about_content--03" id="Project">
+              <a href="#none" data-cursor="click">Project</a>
               <div class="about_content">
                 <!-- <p class="about_content--desc">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p> -->
                  <div class="about_content--desc content_wrap">
@@ -259,7 +259,7 @@
               </div>
             </div>
             <div class="final_area">
-              <img src="./assets/images/bg1.jpg" alt="포트폴리오 종료 이미지">
+              <video src="./assets/video/yeonn.mp4" controls autoplay muted loop playsinline></video>
               <div class="final_message">
                 <p class="final_message--txt">지속 가능한 퍼블리싱을 지향하며, 더 나은 결과를 위해 끊임없이 고민합니다.
                   포트폴리오를 끝까지 확인해 주셔서 감사합니다. 
@@ -333,7 +333,7 @@
   console.clear();
   const { gsap } = window;
   const btn = document.querySelector(".contact_btn");
-  const sec4 = document.querySelector(".sec5");
+  const sec4 = document.querySelector(".sec4");
 
   btn.addEventListener("click", () => {
     btn.style.pointerEvents = "none"; // 중복 방지
@@ -359,17 +359,17 @@
     gsap.set(".contact_btn", { pointerEvents: "none" });
 
     tl.fromTo(
-      ".sec5 .contact--transition-slide",
+      ".sec4 .contact--transition-slide",
       { scaleX: 0, transformOrigin: "left center" },
       { duration: 0.5, scaleX: 1, ease: "Expo.inOut" }
     )
       .fromTo(
-        ".sec5 .menu--item-line",
+        ".sec4 .menu--item-line",
         { scaleX: 0, transformOrigin: "left center" },
         { duration: 0.65, scaleX: 1, ease: "Expo.inOut", stagger: 0.15 }
       )
       .fromTo(
-        ".sec5 .menu--link",
+        ".sec4 .menu--link",
         { translateY: "100%" },
         { duration: 2.25, translateY: 0, ease: "elastic.inOut", stagger: 0.15 },
         "-=1.65"
@@ -382,7 +382,7 @@
 
     gsap.set(".contact_btn", { pointerEvents: "none" });
 
-    tl.to(".sec5 .menu--item-line", {
+    tl.to(".sec4 .menu--item-line", {
       duration: 0.6,
       scaleX: 0,
       transformOrigin: "right center",
@@ -390,7 +390,7 @@
       stagger: -0.15
     })
       .to(
-        ".sec5 .menu--link",
+        ".sec4 .menu--link",
         {
           duration: 0.35,
           translateY: "100%",
@@ -399,7 +399,7 @@
         },
         0
       )
-      .to(".sec5 .contact--transition-slide", {
+      .to(".sec4 .contact--transition-slide", {
         duration: 0.5,
         transformOrigin: "right center",
         scaleX: 0,

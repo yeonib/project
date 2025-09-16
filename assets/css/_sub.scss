@@ -29,6 +29,7 @@
     width: 100%;
     height: 100%;
     background-color: #ece9e1;
+    box-sizing: border-box;
     &--left {
       width: 100%;
       padding: 8rem;
@@ -48,18 +49,23 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      gap: 4rem;
+      gap: 4rem; // wider spacing between elements in right column
       padding: 8rem;
       p {
         font-size: 1.8rem;
         color: #e43c13;
         white-space :unset;
+        line-height: 1.7;
+        margin-top: 1rem;
       }
+      .project_tit { margin: 0 0 2.5rem; }
+      .skill_container { margin-top: 1.5rem; }
     }
     &.con1 {
       display: flex;
       align-items: center;
       justify-items: center;
+      gap: 6rem; // widen space between left and right columns
       > div {
         width: 50%;
         height: 100%;
@@ -90,7 +96,7 @@
     }
     .bar_outer {
       height: 1.25em;
-      background: #ccc;
+      background: #f1ece6; // softer neutral track
       position: relative;
       border-radius: 0.3em;
       .speech_bubble {
@@ -124,27 +130,13 @@
         transform: skewX(-20deg);
         transform-origin: left;
       }
-      .ht, .html {
-        background: #eabcac;
-        color: #fff;
-      }
-      .html:after {
-        border-top-color: #eabcac;
-      }
-      .jq, .jqu {
-        background: #eabcac;
-        color: #fff;
-      }
-      .jqu:after {
-        border-top-color: #eabcac;
-      }
-      .cs, .css {
-        background: #eabcac;
-        color: #fff;
-      }
-      .css:after {
-        border-top-color: #eabcac;
-      }
+      // pastel, fresh fills
+      .ht, .html { background: #9ec5fe; color: #2a2a2a; }
+      .html:after { border-top-color: #9ec5fe; }
+      .jq, .jqu { background: #cdb4ff; color: #2a2a2a; }
+      .jqu:after { border-top-color: #cdb4ff; }
+      .cs, .css { background: #a8dfc1; color: #2a2a2a; }
+      .css:after { border-top-color: #a8dfc1; }
     }
   }
 }
@@ -302,4 +294,58 @@
 }
 .animated_arrow > .main > .the_arrow {
   position: relative;
+}
+
+// Responsive for project sub pages
+@media (max-width: 1200px) {
+  #subContainer {
+    .project_con { padding-left: 10px; padding-right: 10px; }
+    .project_con.con1 {
+      flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 3rem; // spacing between blocks on tablet
+      > div { width: 100%; height: auto; }
+    }
+    .project_con--left { padding: 3rem 10px; border-right: 0; }
+    .project_con--left .project_img { height: auto; margin-bottom: 0; }
+    .project_con--left .project_img img { height: auto; object-fit: cover; }
+    .project_con--right { padding: 2rem 10px; gap: 2.5rem; }
+    .project_con--right .project_tit { margin-bottom: 1.5rem; }
+    .project_con--right p { margin: 0.5rem 0 0; }
+  }
+  .skill_container { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
+
+@media (max-width: 768px) {
+  #subContainer {
+    background-color: #ece9e1;
+    .back_wrapper { position: sticky; top: 0; padding-left: 10px; padding-right: 10px; height: 4rem; background: #ece9e1; z-index: 10; align-items: center; }
+    .project_con { padding-left: 10px; padding-right: 10px; position: relative; }
+    .project_con--left { padding: 1rem 0; }
+    .project_con--right { padding: 1rem 10px; gap: 2rem; }
+    .project_con--right p { font-size: 1.5rem; line-height: 1.5; }
+    .project_tit { height: auto; margin-top: 0; margin-bottom: -1.5rem; }
+    .animated_arrow > .main { position: static; top: auto; height: auto; }
+    .animated_arrow > .main > .text { font-size: 3rem; position: relative; }
+    .animated_arrow > .main > .text::after { content: "  project view >"; font-size: 1.2rem; font-weight: 400; color: rgba(228, 60, 19, 0.45); margin-left: 0.6rem; vertical-align: middle; }
+    // Title above image without overlap: flatten right column and reorder
+    .project_con.con1 { display: flex; flex-direction: column; margin-top: 6rem; }
+    .project_con--right { display: contents; }
+    .project_con.con1 .project_tit { order: 1; }
+    .project_con.con1 > .project_con--left { order: 2; }
+    .project_con.con1 .project_con--right > p { order: 3; }
+    .project_con.con1 .skill_container { order: 4; }
+    .project_con--right .project_tit { position: static; top: auto; left: auto; z-index: auto; }
+    .project_con--left .project_img { height: auto; margin-bottom: 0; }
+  }
+  .skill_container { width: 100%; }
+  .skill_container { width: 90%; }
+  .skill_container .bar { width: 100%; }
+  .skill_container .bar .bar_outer { width: 100%; }
+  // Remove hover animations on mobile
+  .animated_arrow:hover > .the_arrow.-left > .shaft { width: 0; background-color: #eabcac; margin-right: 0; }
+  .animated_arrow:hover > .the_arrow.-left > .shaft:before, .animated_arrow:hover > .the_arrow.-left > .shaft:after { width: 0; background-color: #eabcac; }
+  .animated_arrow:hover > .main { transform: none; }
+  .animated_arrow:hover > .main > .the_arrow.-right > .shaft { width: 10rem; transform: none; }
+  .animated_arrow:hover > .main > .the_arrow.-right > .shaft:before, .animated_arrow:hover > .main > .the_arrow.-right > .shaft:after { width: 0.8rem; }
+  // Hide long arrows; use simple '>' in hint text only
+  .animated_arrow .the_arrow { display: none; }
 }

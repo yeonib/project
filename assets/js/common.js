@@ -16,6 +16,13 @@
     });
 
     gsap.set(".terminal-line", { opacity: 0 });
+    // lock scroll during intro
+    const rootEl = document.documentElement;
+    const bodyEl = document.body;
+    const prevOverflowRoot = rootEl.style.overflow;
+    const prevOverflowBody = bodyEl.style.overflow;
+    rootEl.style.overflow = "hidden";
+    bodyEl.style.overflow = "hidden";
 
     const updateProgress = (percent) => {
       const progressBar = document.getElementById("progress-bar");
@@ -162,6 +169,12 @@
         stagger: 0.1,
         ease: slideEase
       }, "-=0.2");
+
+      // unlock scroll at the end
+      revealTl.call(() => {
+        rootEl.style.overflow = prevOverflowRoot || "";
+        bodyEl.style.overflow = prevOverflowBody || "";
+      });
     };
 
     gsap.set(preloaderEl, {
@@ -177,7 +190,7 @@
   const initMiddleNameFollowScroll = () => {
     const mName = document.querySelector(".home_intro--name .m_name");
     if (!mName) return;
-
+    if (window.matchMedia("(max-width: 768px)").matches) return;
     const scrollContainer = document.querySelector(".main__scroll");
     const totalScrollWidth = scrollContainer.scrollWidth - window.innerWidth;
 
@@ -195,6 +208,14 @@
   };
   const initScrollHorizontal = () => {
     gsap.registerPlugin(ScrollTrigger);
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      // kill any existing triggers and reset transforms for mobile vertical scroll
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      const panels = gsap.utils.toArray(".scroll__panel");
+      gsap.set(panels, { xPercent: 0, clearProps: "transform" });
+      document.body.style.height = "";
+      return;
+    }
     const scrollContainer = document.querySelector(".main__scroll");
     const panels = gsap.utils.toArray(".scroll__panel");
     const totalScrollWidth = scrollContainer.scrollWidth;
@@ -217,6 +238,7 @@
     const clonedMenu = originalMenu.cloneNode(true);
     clonedMenu.classList.add("menu-panel__list--clone");
     document.body.appendChild(clonedMenu);
+    if (window.matchMedia("(max-width: 768px)").matches) return;
     ScrollTrigger.create({
       trigger: ".main__scroll",
       start: "top top",
@@ -253,6 +275,10 @@
   };
   const initAccordionStyleAboutMe = () => {
     const items = document.querySelectorAll('.about_accordion .about_cate--list');
+    const collapseAll = () => items.forEach(el => el.classList.remove('active'));
+    const isNonDesktop = () => window.matchMedia('(max-width: 1700px)').matches;
+    // Default state: non-desktop collapsed, desktop keeps existing active from markup
+    if (isNonDesktop()) collapseAll();
 
     items.forEach(item => {
       const link = item.querySelector('a');
@@ -268,6 +294,18 @@
 
         item.classList.add('active');
       });
+    });
+
+    // Respond to breakpoint changes
+    let wasNonDesktop = isNonDesktop();
+    window.addEventListener('resize', () => {
+      const nowNonDesktop = isNonDesktop();
+      if (nowNonDesktop !== wasNonDesktop) {
+        wasNonDesktop = nowNonDesktop;
+        if (nowNonDesktop) {
+          collapseAll();
+        }
+      }
     });
   };
   const initProjectPageTransition = () => {
@@ -312,6 +350,16 @@
     initProjectPageTransition();
     initMiddleNameFollowScroll();
     initBackButton();
+    // Re-init on resize when crossing breakpoint
+    let isMobile = window.matchMedia("(max-width: 768px)").matches;
+    window.addEventListener("resize", () => {
+      const nowMobile = window.matchMedia("(max-width: 768px)").matches;
+      if (nowMobile !== isMobile) {
+        isMobile = nowMobile;
+        initScrollHorizontal();
+        initMiddleNameFollowScroll();
+      }
+    });
   };
 
   window.addEventListener("load", init);

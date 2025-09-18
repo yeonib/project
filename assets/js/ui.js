@@ -7,7 +7,6 @@
     const marqueeInner = document.querySelector('.marquee-inner');
     if (!marqueeInner) return;
 
-    // 복제해서 자연스럽게 반복되도록
     const clone = marqueeInner.cloneNode(true);
     marqueeInner.parentNode.appendChild(clone);
   };
@@ -35,10 +34,8 @@
   $(window).on("load", function () {
     setTimeout(() => {
       initSkillBarAnimation();
-    }, 300); // DOM 다 뜨고 여유 있게 실행
+    }, 300); 
   });
-
-
 
   const init = () => {
     initSkillBarAnimation();

@@ -116,4 +116,10 @@
   color: #fff;
 }
 
-
+@media (min-width:320px) and (max-width:768px) {
+  .menu-panel__list {
+    &--clone {
+      display: none;
+    }
+  }
+}

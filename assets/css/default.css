@@ -1764,6 +1764,8 @@ h2 {
   }
   #main.main-container__main .main__scroll .sec1.scroll__panel {
     min-width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro {
     width: 100%;
@@ -1774,19 +1776,22 @@ h2 {
     font-size: 1rem;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro--left .fade-txt, #main.main-container__main .main__scroll .sec1 .home_intro--left .slide-txt {
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     padding-left: 3rem;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro--name {
-    left: 0;
     gap: 1.25rem;
-    margin-top: 2rem;
+    margin-top: -3rem;
+    margin-left: -1rem;
+    position: absolute;
+    left: 35rem;
+    color: #decfcc;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro--name div {
-    font-size: 5.6rem;
+    font-size: 8rem;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro--name .m_name {
-    margin-left: 1rem;
+    margin-left: 10rem;
   }
   #main.main-container__main .main__scroll .sec1 .home_intro--name .l_name {
     margin-left: 0;
@@ -1841,7 +1846,7 @@ h2 {
             writing-mode: horizontal-tb;
     -webkit-transform: none;
             transform: none;
-    font-size: 2.2rem;
+    font-size: 6.5rem;
     margin: 0;
     padding: 0.25rem 0;
     white-space: nowrap;
@@ -1859,7 +1864,7 @@ h2 {
     width: 100%;
   }
   #main.main-container__main .main__scroll .sec2 .about_accordion .about_cate--list .about_content--desc {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
   #main.main-container__main .main__scroll .sec2 .about_accordion .about_cate--list.active {
     -webkit-box-flex: 0;
@@ -1878,7 +1883,7 @@ h2 {
     width: 100%;
   }
   #main.main-container__main .main__scroll .sec2 .about_accordion .about_content--03 .project_cate--list a {
-    font-size: 1.6rem;
+    font-size: 3.5rem;
     margin-left: 0;
     line-height: 100%;
   }
@@ -1912,7 +1917,8 @@ h2 {
     height: auto;
   }
   #main.main-container__main .main__scroll .sec3 .final_area .final_message--txt {
-    font-size: 1.4rem;
+    font-size: 2.5rem;
+    white-space: normal;
   }
   #main.main-container__main .main__scroll .sec3 .final_area .final_links {
     width: 100%;
@@ -1939,7 +1945,8 @@ h2 {
   }
   .panel_tit {
     width: 100% !important;
-    font-size: 3rem !important;
+    height: 15% !important;
+    font-size: 5rem !important;
     border-bottom: 1px solid #e43c13;
     border-left: 0 !important;
     padding-bottom: 1.5rem;
@@ -1999,6 +2006,9 @@ h2 {
   }
 }
 @media (max-width: 480px) {
+  #main.main-container__main .main__scroll .panel_tit {
+    font-size: 3rem !important;
+  }
   #main.main-container__main .main__scroll .sec1 .home_intro--name {
     left: 52%;
     color: #decfcc;
@@ -2504,6 +2514,7 @@ h2 {
 @media (max-width: 768px) {
   #subContainer {
     background-color: #ece9e1;
+    overflow-y: scroll;
   }
   #subContainer .back_wrapper {
     position: sticky;
@@ -2599,10 +2610,8 @@ h2 {
     margin-bottom: 0;
   }
   .skill_container {
-    width: 100%;
-  }
-  .skill_container {
-    width: 90%;
+    width: 92%;
+    margin-left: 0.3rem;
   }
   .skill_container .bar {
     width: 100%;
@@ -2788,7 +2797,19 @@ h2 {
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-  .menu-panel__list--clone {
+  #main.main-container__main nav {
+    height: 100% !important;
+  }
+  #main.main-container__main nav .logo a {
+    height: unset !important;
+  }
+  #main.main-container__main nav .logo a img {
+    position: unset !important;
+  }
+  #main.main-container__main .menu-panel__header {
+    position: relative !important;
+  }
+  #main.main-container__main .menu-panel__list--clone {
     display: none;
   }
 }

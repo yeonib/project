@@ -317,6 +317,7 @@
 @media (max-width: 768px) {
   #subContainer {
     background-color: #ece9e1;
+    overflow-y: scroll;
     .back_wrapper { position: sticky; top: 0; padding-left: 10px; padding-right: 10px; height: 4rem; background: #ece9e1; z-index: 10; align-items: center; }
     .project_con { padding-left: 10px; padding-right: 10px; position: relative; }
     .project_con--left { padding: 1rem 0; }
@@ -336,8 +337,10 @@
     .project_con--right .project_tit { position: static; top: auto; left: auto; z-index: auto; }
     .project_con--left .project_img { height: auto; margin-bottom: 0; }
   }
-  .skill_container { width: 100%; }
-  .skill_container { width: 90%; }
+  .skill_container { 
+    width: 92%;
+    margin-left: .3rem;
+  }
   .skill_container .bar { width: 100%; }
   .skill_container .bar .bar_outer { width: 100%; }
   // Remove hover animations on mobile

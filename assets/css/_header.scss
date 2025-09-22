@@ -93,7 +93,6 @@
   }
 }
 
-// 복제된 메뉴는 body에 위치하므로 별도로 추가
 .menu-panel__list--clone {
   position: fixed;
   top: 0;
@@ -116,26 +115,25 @@
   color: #fff;
 }
 
+/*breakpoint*/
 @media (min-width:320px) and (max-width:768px) {
   #main {
-    &.main-container__main {
-      nav {
-        height: 100%!important;
-        .logo a {
-          height: unset!important;
-          img {
-            position: unset!important;
-          }
+    nav {
+      height: 100%!important;
+      .logo a {
+        height: unset!important;
+        img {
+          position: unset!important;
         }
       }
-      .menu-panel {
-        &__header {
-          position: relative!important;
-        }
-        &__list {
-          &--clone {
-            display: none;
-          }
+    }
+    .menu-panel {
+      &__header {
+        position: relative!important;
+      }
+      &__list {
+        &--clone {
+          display: none;
         }
       }
     }

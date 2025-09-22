@@ -350,7 +350,7 @@
     initProjectPageTransition();
     initMiddleNameFollowScroll();
     initBackButton();
-    // Re-init on resize when crossing breakpoint
+    // breakpoint
     let isMobile = window.matchMedia("(max-width: 768px)").matches;
     window.addEventListener("resize", () => {
       const nowMobile = window.matchMedia("(max-width: 768px)").matches;

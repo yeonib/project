@@ -49,7 +49,7 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      gap: 4rem; // wider spacing between elements in right column
+      gap: 4rem;
       padding: 8rem;
       p {
         font-size: 1.8rem;
@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       justify-items: center;
-      gap: 6rem; // widen space between left and right columns
+      gap: 6rem;
       > div {
         width: 50%;
         height: 100%;
@@ -84,7 +84,6 @@
   .bar {
     width: 15rem;
     height: 2.5rem;
-    // width: 100%;
     transform: skewX(-20deg);
     transform-origin: left;
     .skill {
@@ -96,7 +95,7 @@
     }
     .bar_outer {
       height: 1.25em;
-      background: #f1ece6; // softer neutral track
+      background: #f1ece6;
       position: relative;
       border-radius: 0.3em;
       .speech_bubble {
@@ -130,7 +129,6 @@
         transform: skewX(-20deg);
         transform-origin: left;
       }
-      // pastel, fresh fills
       .ht, .html { background: #9ec5fe; color: #2a2a2a; }
       .html:after { border-top-color: #9ec5fe; }
       .jq, .jqu { background: #cdb4ff; color: #2a2a2a; }
@@ -296,7 +294,7 @@
   position: relative;
 }
 
-// Responsive for project sub pages
+/*breakpoint*/
 @media (max-width: 1200px) {
   #subContainer {
     .project_con { padding-left: 10px; padding-right: 10px; }

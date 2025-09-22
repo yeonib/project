@@ -1552,7 +1552,7 @@ h2 {
           transform: translateY(0);
 }
 
-/*미디어쿼리*/
+/*breakpoint*/
 @media (max-width: 1440px) {
   #main.main-container__main .main__scroll .scroll__panel {
     margin-left: 3rem;
@@ -2036,8 +2036,11 @@ h2 {
     font-size: 2.5rem;
     line-height: 100%;
   }
+  #main.main-container__main .main__scroll .sec3 .final_area .final_message--txt {
+    font-size: 1.5rem;
+  }
   .contact_btn_wrap {
-    bottom: 1rem;
+    bottom: 2rem;
     right: 1rem;
   }
 }
@@ -2455,6 +2458,7 @@ h2 {
   position: relative;
 }
 
+/*breakpoint*/
 @media (max-width: 1200px) {
   #subContainer .project_con {
     padding-left: 10px;
@@ -2796,20 +2800,21 @@ h2 {
   color: #fff;
 }
 
+/*breakpoint*/
 @media (min-width: 320px) and (max-width: 768px) {
-  #main.main-container__main nav {
+  #main nav {
     height: 100% !important;
   }
-  #main.main-container__main nav .logo a {
+  #main nav .logo a {
     height: unset !important;
   }
-  #main.main-container__main nav .logo a img {
+  #main nav .logo a img {
     position: unset !important;
   }
-  #main.main-container__main .menu-panel__header {
+  #main .menu-panel__header {
     position: relative !important;
   }
-  #main.main-container__main .menu-panel__list--clone {
+  #main .menu-panel__list--clone {
     display: none;
   }
 }
